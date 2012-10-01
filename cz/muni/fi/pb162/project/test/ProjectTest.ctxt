@@ -7,6 +7,4 @@ comment2.params=
 comment2.target=void\ task02()
 comment3.params=
 comment3.target=void\ task03()
-comment4.params=
-comment4.target=void\ tearDown()
-numComments=5
+numComments=4

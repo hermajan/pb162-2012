@@ -1,5 +1,5 @@
 #BlueJ class context
 comment0.params=args
 comment0.target=void\ main(java.lang.String[])
-comment0.text=\r\n\ Method\ prints\ "Hello\ World\!"\ on\ standard\ output\r\n
+comment0.text=\r\n\ Method\ launches\ methods\ from\ other\ classes\r\n
 numComments=1
