@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=center\ radius
+comment0.target=Circle(Vertex2D,\ double)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Circle\r\n
+comment1.params=
+comment1.target=Circle()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Circle\r\n
+comment2.params=
+comment2.target=double\ getRadius()
+comment2.text=\r\n\ Returns\ radius\r\n\ \r\n\ @return\ radius\r\n
+comment3.params=
+comment3.target=Vertex2D\ getCenter()
+comment3.text=\r\n\ Returns\ center\r\n\ \r\n\ @return\ center\r\n
+comment4.params=
+comment4.target=java.lang.String\ toString()
+comment4.text=\r\n\ Returns\ circle\ in\ format\ "Circle\:\ center\=[<x>,\ <y>],\ radius\=<radius>"\r\n\ \r\n\ @return\ circle\ in\ format\ "Circle\:\ center\=[<x>,\ <y>],\ radius\=<radius>"\r\n
+numComments=5

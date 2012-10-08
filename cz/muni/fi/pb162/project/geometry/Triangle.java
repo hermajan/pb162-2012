@@ -4,13 +4,18 @@ package cz.muni.fi.pb162.project.geometry;
  * Defines triangle
  * 
  * @author Jan Hermann 
- * @version 01.10.2012
+ * @version 08.10.2012
  */
 public class Triangle {
     private Vertex2D a;
     private Vertex2D b;
     private Vertex2D c;
     
+    public Triangle(Vertex2D a,Vertex2D b,Vertex2D c) {
+        this.a=a;
+        this.b=b;
+        this.c=c;
+    }
     /**
      * Returns vertex A
      * 
@@ -19,14 +24,14 @@ public class Triangle {
     public Vertex2D getVertexA() {
         return a;
     }
-    /**
+    /*
      * Sets point A
      * 
      * @param vert New vertex A
     */
-    public void setVertexA(Vertex2D vert) {
+    /*public void setVertexA(Vertex2D vert) {
         a=vert;
-    }
+    }*/
 
     /**
      * Returns vertex B
@@ -36,14 +41,14 @@ public class Triangle {
     public Vertex2D getVertexB() {
         return b;
     }
-    /**
+    /*
      * Sets point B
      * 
      * @param vert New vertex B
     */
-    public void setVertexB(Vertex2D vert) {
+    /*public void setVertexB(Vertex2D vert) {
         b=vert;
-    }
+    }*/
     
     /**
      * Returns vertex C
@@ -53,14 +58,14 @@ public class Triangle {
     public Vertex2D getVertexC() {
         return c;
     }
-    /**
+    /*
      * Sets point C
      * 
      * @param vert New vertex C
     */
-    public void setVertexC(Vertex2D vert) {
+    /*public void setVertexC(Vertex2D vert) {
         c=vert;
-    }
+    }*/
  
     /**
      * Checks equilateral of triangle
@@ -79,7 +84,12 @@ public class Triangle {
      * @return string in format "Triangle: vertices=[ax, ay] [bx, by] [cx, cy]"
      */
     public String toString() {
-        return "Triangle: vertices="+a.toString()+" "+b.toString()+" "+c.toString();
+        if(a==null || b==null || c==null) {
+            return "INVALID TRIANGLE";
+        }
+        else {
+            return "Triangle: vertices="+a.toString()+" "+b.toString()+" "+c.toString();
+        }
     }
     
 }

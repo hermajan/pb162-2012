@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        Cvičení zaměřené na práci s podmíněným výrazem (if), definici vlastních konstruktorů a jejich přetěžování.
+        
+        <h3>Povinné úkoly:</h3>
+        <ol>
+            <li>
+                Do třídy <code>Vertex2D</code> a <code>Triangle</code> přidejte následující konstruktory:
+                <ul>
+                    <li>Konstruktor třídy <code>Vertex2D</code> bude mít dva parametry s hodnotami souřadnic 
+                        <i>X</i> a <i>Y</i>.</li>
+                    <li>Konstruktor třídy <code>Triangle</code> bude mít tři parametry s vrcholy 
+                        <i>A,B</i> a <i>C</i>.</li>
+                </ul>
+                Zrušte set metody u tříd <code>Vertex2D</code> i <code>Triangle</code>. 
+                Nyní již nejsou potřeba, protože souřadnice se nastavují konstruktorem. 
+            </li>
+            
+            <li>
+                Upravte třídy <code>Vertex2D</code> a <code>Triangle</code> tak, 
+                aby kontrolovaly <code>null</code> hodnoty objektových proměnných. Konkrétně:
+                <ul>                    
+                    <li>Metoda <code>distance</code> ve třídě <code>Vertex2D</code> bude vracet 
+                        hodnotu -1.0 pokud je vstupní argument prázdný (null).</li>
+                    <li>Metoda <code>toString</code> ve třídě <code>Triangle</code> trátí text 
+                        <i>"INVALID TRIANGLE"</i> pokud je některý z vrcholů prázdný. 
+                        Jinak vrátí původní text.</li>
+                </ul>
+            </li>
+
+            <li>
+                Upravte třídu Demo tak, aby využívala nové kostruktory (tj. tak, aby šla třída přeložit).
+            </li>
+            
+            <li>
+                Vytvořte třídu <code>Circle</code>. 
+                <ul>
+                    <li>Třída bude mít konstruktor se dvěma parametry (v tomto pořadí):
+                        střed typu <code>Vertex2D</code> a poloměr typu <code>double</code>.</li>
+                    <li>Třída bude mít dále bezparametrický konstruktor, který
+                        vytvoří jednotkovou kružnici se středem v počátku souřadného systému 
+                        (tj. střed [0,0], poloměr 1). <b>Bezparametrický konstruktor bude volat 
+                        předchozí konstruktor</b> s parametry a předá mu potřebné konstanty!</li>
+                    <li>Pro poloměr a střed vytvořte "get metody" <code>getRadius()</code>
+                        a <code>getCenter()</code>.</li>
+                    <li>Metoda <code>toString</code> bude vracet řetězec ve formátu 
+                        <code>"Circle: center=[&lt;x&gt;, &lt;y&gt;], radius=&lt;radius&gt;"</code>.</li>
+                </ul>
+            </li>
+            
+            <!--
+            <li>
+                Vytvořte třídu <code>Square</code>. <b>DÁT JAKO HOTOVOU TŘÍDU DO PŘÍŠTÍ ITERACE NEBO PŘESUNOUT DO NEPOVINNÝCH ÚKOLŮ</b>
+                <ul>
+                    <li>Třída bude mít dva konstruktory. Jeden bezparametrický, který 
+                        vytvoří jednotkový čtverec (čtverec s délkou hran 1). Druhý konstruktor
+                        bude brát délku hran jako svůj parametr typu <code>double</code>.</li>
+                    <li>Bezparametrický konstruktor bude volat konstruktor s parametrem a předá mu 
+                        konstantu 1.</li>
+                    <li>Pro délku hran vytvořte get a set metody.</li>
+                    <li>Metoda <code>toString</code> bude vrace řetězec ve formátu 
+                        <code>"Square: &lt;d&gt;x&lt;d&gt;"</code> kde &lt;d&gt; je délka hran.</li>
+                    <li>Pozn.: Náš čtverec má vždy střed v počátku souřadného systému.</li>
+                </ul>
+            </li>
+            -->
+        </ol>
+        
+        <h3>Nepovinné úkoly:</h3>
+        <ol>
+            <li>
+                Splňte nepovinný úkol z minulého týdne, pokud jste tak dosud neučinili.
+            </li>
+            <li>
+                Upravte metodu <code>divide()</code> třídy <code>Triangle</code> tak, 
+                že bude brát jeden celočíselný parametr udávající rekurzivní hloubku dělení
+                trojúhelníka. Pokud je hodnota větší než nula, dojde k rozdělení stejně jak odosud.
+                Poté se metoda zavolá na všech třech nově vzniklých trojúhelnících s hodnotou 
+                o jedničku menší. Pokud je hodnota vstupního parametru menší nebo rovna nule,
+                trojúhelník se nedělí.
+            </li>
+            <li>
+                <b>Pozn.:</b> Po vypracování nepovinných úkolů přestanou fungovat jednotkové testy.
+            </li>
+            <!-- <li>
+                ??? Námět: Vykreslení Sphere flake fractal ???
+                ??? Námět: Composite GoF na procházení/zobrazení fraktálu ???
+            </li> -->
+        </ol>
+    </body>
+</html>
