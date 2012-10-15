@@ -4,12 +4,13 @@ package cz.muni.fi.pb162.project.geometry;
  * Defines triangle
  * 
  * @author Jan Hermann 
- * @version 08.10.2012
+ * @version 15.10.2012
  */
-public class Triangle {
+public class Triangle implements Solid {
     private Vertex2D a;
     private Vertex2D b;
     private Vertex2D c;
+    public static final double EQUILATERAL=0.001;
     
     public Triangle(Vertex2D a,Vertex2D b,Vertex2D c) {
         this.a=a;
@@ -73,9 +74,7 @@ public class Triangle {
      * @return true if triangle is equilateral, false otherwise
      */
     public boolean isEquilateral() {
-        return((Math.abs(a.distance(b)-a.distance(c)) < 0.001) && (Math.abs(a.distance(b)-b.distance(c)) < 0.001));
-        
-        
+        return((Math.abs(a.distance(b)-a.distance(c)) < EQUILATERAL) && (Math.abs(a.distance(b)-b.distance(c)) < EQUILATERAL));
     }
     
     /**
@@ -92,5 +91,42 @@ public class Triangle {
         }
     }
     
+    public double getWidth() {
+        double minimum;
+        double maximum;
+        
+        minimum=Math.min(a.getX(),b.getX());
+        maximum=Math.max(a.getX(),b.getX());
+        
+        return Math.max(maximum,c.getX())-Math.min(minimum,c.getX());
+    }
+    
+    public double getHeight() {
+        double minimum;
+        double maximum;
+        
+        minimum=Math.min(a.getY(),b.getY());
+        maximum=Math.max(a.getY(),b.getY());
+        
+        return Math.max(maximum,c.getY())-Math.min(minimum,c.getY());
+    }
+    
+    public double getLength() {
+        return a.distance(b)+b.distance(c)+a.distance(c);
+    }
+    
+    public double getArea() {
+        double s;
+        double sideA;
+        double sideB;
+        double sideC;
+        
+        sideA=a.distance(b);
+        sideB=b.distance(c);
+        sideC=a.distance(c);
+        
+        s=getLength()/2;
+        return Math.sqrt(s * (s-sideA) * (s-sideB) * (s-sideC));
+    }
 }
 

@@ -5,9 +5,9 @@ package cz.muni.fi.pb162.project.geometry;
  * Defines circle
  * 
  * @author Jan Hermann 
- * @version 08.10.2012
+ * @version 15.10.2012
  */
-public class Circle {
+public class Circle implements Solid {
     private Vertex2D center;
     private double radius;
 
@@ -51,5 +51,21 @@ public class Circle {
      */
     public String toString() {
         return  "Circle: center="+center.toString()+", radius="+radius;
+    }
+    
+     public double getWidth() {
+       return 2*radius;
+    }
+    
+    public double getHeight() {
+        return 2*radius;
+    }
+    
+    public double getLength() {
+        return 2*Math.PI*radius;
+    }
+    
+    public double getArea() {
+        return Math.PI*Math.pow(radius,2);
     }
 }

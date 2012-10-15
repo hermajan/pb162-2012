@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=m
+comment0.target=void\ printMeasurement(Measurable)
+comment0.text=\r\n\ Prints\ information\ about\ measurable\ object\r\n\ \r\n\ @param\ m\ Measurable\ object\r\n
+comment1.params=s
+comment1.target=void\ printMeasurement(Solid)
+comment1.text=\r\n\ Prints\ information\ about\ solid\ object\r\n\ \r\n\ @param\ s\ Solid\ object\r\n
+numComments=2
