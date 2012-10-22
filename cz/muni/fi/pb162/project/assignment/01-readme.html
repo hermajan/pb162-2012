@@ -5,29 +5,33 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
+        Cvičení zaměřené na základní práci s atributy, metodami a na instanciaci tříd (bez vlastních konstruktorů).
+        
         <h3>Povinné úkoly:</h3>
         <ol>
             <li>
-                Vytvořte třídu Vertex2D představující bod v 2D prostoru se souřadnicemi X a Y.
+                [1.5 bodu] Vytvořte třídu Vertex2D představující bod v 2D prostoru se souřadnicemi X a Y.
+                Třída nebude mít definovaný žádný konstuktor (prozatím není potřeba)!
                 <ul>
                     <li>Třída bude v balíku <code>cz.muni.fi.pb162.project.geometry</code>.</li>
-                    <li>Třída bude mít dva atributy typu <code>double</code> pro hodnoty 
-                        <code>X</code> a <code>Y</code> + příslušné get a set metody.</li>
+                    <li>Třída bude mít dva atributy typu <code>double</code>, ve kterých si bude uchovávat hodnoty souřadnic 
+                        <code>X</code> a <code>Y</code>.</li>
+                    <li>Přidejte do třídy tzv. "gettery" a "settery", tj. metody 
+                        <code>double getX()</code> a <code>double getY()</code> pro získání hodnot atributů a
+                        <code>void setX(double newX)</code> a <code>void setY(double newY)</code> pro nastavení 
+                        hodnot atributů.</li>
                     <li>Metoda <code>String toString()</code> vrátí <code>"[X, Y]"</code>, 
                         tj. souřadnice bodu v hranatých závorkách.</li>
-                    <li>Metoda <code>distance</code> vezme jiný 2D bod jako vstupní parametr 
-                        a vrátí jeho vzdálenost.
-                        Vzdálenost bodů se vypočítá jako<br/><img src="01a.png"><br/>
-                        V Javě se odmocnina vypočítá pomocí volání <code>Math.sqrt()</code>.</li>
                     <li>
-                        <b>Pozn. pro cvičící:</b> Vysvětlit použití <code>Math.sqrt()</code> s tím, 
-                        že statické metody budou teprve probrány. Zatím neřešit null hodnoty, bude příště.
+                        <b>Pozn. pro cvičící:</b> Vysvětlit princip getterů a setterů. Pravidla pro jejich pojmenování. Zdůraznit, že nastavují/vrací
+                        vždy jen hodnotu jediného atributu.
                     </li>
                 </ul>
             </li>
             
             <li>
-                Vytvořte třídu <code>Triangle</code>.
+                [1.5 bodu] Vytvořte třídu <code>Triangle</code>.
+                Třída nebude mít definovaný žádný konstuktor (prozatím není potřeba)!
                 <ul>                        
                     <li>Třída bude v balíku <code>cz.muni.fi.pb162.project.geometry</code>.</li>
                     <li>Trojúhelník se skládá ze tří vrcholů <i>A, B</i> a <i>C</i> 
@@ -36,27 +40,19 @@
                         Podobně přidejte metody <code>setVertexB</code> a <code>setVertexC</code>.</li>
                     <li>Metoda <code>Vertex2D getVertexA()</code> vrátí vrchol <i>A</i>. Podobně přidejte metody 
                         <code>getVertexB</code> a <code>getVertexC</code>.</li>
-                    <li>Metoda <code>boolean isEquilateral()</code> vrátí <code>true</code> jestliže je 
-                        trojúhelník rovnostranný. Protože pracujeme s reálnými čísly, nelze jednoduše porovnat 
-                        délky stran např. pomocí <code>d1 == d2</code>. Je nutné použít test, který bude 
-                        považovat dvě reálná čísla za shodná, pokud jsou dostatečně podobná např. takto: 
-                        <pre>Math.abs(d1-d2) &lt; 0.001</pre> kde <code>0.001</code> je tolerovaná odchylka.</li>
                     <li>Metoda <code>String toString()</code> vrátí řetězec 
                         <code>"Triangle: vertices=[ax, ay] [bx, by] [cx, cy]"</code>.</li>
-                    <li><b>Pozn. pro cvičící:</b> Explicitně vysvětlit problém porovnávání reálných čísel
-                        a s tím související výraz <code>Math.abs(d1-d2) &lt; 0.001</code>.</li>
                 </ul>
             </li>
             <li>
-                Upravte třídu <code>Demo</code> v balíku <code>cz.muni.fi.pb162.project.demo</code> 
+                [1 bod] Upravte třídu <code>Demo</code> v balíku <code>cz.muni.fi.pb162.project.demo</code> 
                 následujícím způsobem:
                 <ul>
                     <li>Zrušte výpis textu <code>"Hello World!"</code>.</li>
                     <li>Třída vytvoří trojúhelník se souřadnicemi <i>[-1, 0] [0, 1] [1, -1]</i>.</li>
                     <li>Na std. výstup vypíše informace o trojúhelníku. Po spuštění by výstup měl vypadat takto:
                         <pre>
-     Triangle: vertices=[-1.0, 0.0] [0.0, 1.0] [1.0, -1.0]
-                        </pre>
+     Triangle: vertices=[-1.0, 0.0] [0.0, 1.0] [1.0, -1.0]</pre>
                     </li>
                     <li><b>Pozn. pro cvičící:</b> Vysvětlete resp. pomozte studentům s 
                         řádky pro import tříd z jiného balíku.</li>

@@ -9,17 +9,10 @@ comment2.params=
 comment2.target=double\ getRadius()
 comment2.text=\r\n\ Returns\ radius\r\n\ \r\n\ @return\ radius\r\n
 comment3.params=
-comment3.target=Vertex2D\ getCenter()
-comment3.text=\r\n\ Returns\ center\r\n\ \r\n\ @return\ center\r\n
+comment3.target=java.lang.String\ toString()
+comment3.text=\r\n\ Returns\ circle\ in\ format\ "Circle\:\ center\=[<x>,\ <y>],\ radius\=<radius>"\r\n\ \r\n\ @return\ circle\ in\ format\ "Circle\:\ center\=[<x>,\ <y>],\ radius\=<radius>"\r\n
 comment4.params=
-comment4.target=java.lang.String\ toString()
-comment4.text=\r\n\ Returns\ circle\ in\ format\ "Circle\:\ center\=[<x>,\ <y>],\ radius\=<radius>"\r\n\ \r\n\ @return\ circle\ in\ format\ "Circle\:\ center\=[<x>,\ <y>],\ radius\=<radius>"\r\n
+comment4.target=double\ getLength()
 comment5.params=
-comment5.target=double\ getWidth()
-comment6.params=
-comment6.target=double\ getHeight()
-comment7.params=
-comment7.target=double\ getLength()
-comment8.params=
-comment8.target=double\ getArea()
-numComments=9
+comment5.target=double\ getArea()
+numComments=6

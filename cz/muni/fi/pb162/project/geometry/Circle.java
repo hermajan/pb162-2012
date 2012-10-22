@@ -5,17 +5,17 @@ package cz.muni.fi.pb162.project.geometry;
  * Defines circle
  * 
  * @author Jan Hermann 
- * @version 15.10.2012
+ * @version 22.10.2012
  */
-public class Circle implements Solid {
-    private Vertex2D center;
+public class Circle extends GeneralRegularPolygon implements Solid {
+    //private Vertex2D center;
     private double radius;
 
     /**
      * Constructor for objects of class Circle
      */
     public Circle(Vertex2D center, double radius) {
-        this.center=center;
+        super(center,Integer.MAX_VALUE,0);
         this.radius=radius;
     }
 
@@ -34,15 +34,6 @@ public class Circle implements Solid {
     public double getRadius() {
         return radius;
     }
-     
-    /**
-     * Returns center
-     * 
-     * @return center
-     */
-    public Vertex2D getCenter() {
-        return center;
-    }
     
     /**
      * Returns circle in format "Circle: center=[<x>, <y>], radius=<radius>"
@@ -50,15 +41,7 @@ public class Circle implements Solid {
      * @return circle in format "Circle: center=[<x>, <y>], radius=<radius>"
      */
     public String toString() {
-        return  "Circle: center="+center.toString()+", radius="+radius;
-    }
-    
-     public double getWidth() {
-       return 2*radius;
-    }
-    
-    public double getHeight() {
-        return 2*radius;
+        return  "Circle: center="+getCenter().toString()+", radius="+radius;
     }
     
     public double getLength() {

@@ -2,12 +2,10 @@
 comment0.params=
 comment0.target=ProjectTest()
 comment1.params=
-comment1.target=void\ tearDown()
+comment1.target=void\ task01()
 comment2.params=
-comment2.target=void\ task01()
-comment2.text=\r\n\ \ \ \ @Test\ public\ void\ task01()\ {\r\n\ \ \ \ \ \ \ \ task\ \=\ 1;\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ assertTrue("Trida\ Triangle\ neimplementuje\ pozadovane\ rozhrani\ --\ chyba\ v\ hlavicce\ tridy",\ Colored.class.isAssignableFrom(Triangle.class));\r\n\ \ \ \ \ \ \ \ assertTrue("Trida\ Circle\ neimplementuje\ pozadovane\ rozhrani\ --\ chyba\ v\ hlavicce\ tridy",\ Colored.class.isAssignableFrom(Circle.class));\r\n\r\n\ \ \ \ \ \ \ \ Vertex2D\ v1\ \=\ new\ Vertex2D(-1,0);\r\n\ \ \ \ \ \ \ \ Vertex2D\ v2\ \=\ new\ Vertex2D(1,0);\r\n\ \ \ \ \ \ \ \ Vertex2D\ v3\ \=\ new\ Vertex2D(0,1);\r\n\ \ \ \ \ \ \ \ ColoredObsolete\ tri\ \=\ new\ Triangle(v1,\ v2,\ v3);\r\n\ \ \ \ \ \ \ \ ColoredObsolete\ cir\ \=\ new\ Circle();\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ assertEquals("Barva\ trojuhelniku",\ "white",\ tri.getColor());\r\n\ \ \ \ \ \ \ \ assertEquals("Barva\ kruhu",\ "white",\ cir.getColor());\r\n\ \ \ \ \ \ \ \ pointsPerTest\ +\=\ 0.5;\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ assertEquals("Triangle.toString()",\ "Triangle\:\ vertices\=[-1.0,\ 0.0]\ [1.0,\ 0.0]\ [0.0,\ 1.0],\ color\=white",\ tri.toString());\r\n\ \ \ \ \ \ \ \ assertEquals("Circle.toString()",\ "Circle\:\ center\=[0.0,\ 0.0],\ radius\=1.0,\ color\=white",\ cir.toString());\r\n\ \ \ \ \ \ \ \ pointsPerTest\ +\=\ 0.5;\r\n\ \ \ \ }\r\n
+comment2.target=void\ task02()
+comment2.text=\r\n\ \ \ \ @Test\ public\ void\ task02()\ {\r\n\ \ \ \ \ \ \ \ task\ \=\ 2;\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ BasicRulesTester.testMethodsAndAttributes(SquareObsolete.class);\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ SquareObsolete\ s\ \=\ new\ SquareObsolete();\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ assertTrue("Rozsireni\ nadtridy",\ s\ instanceof\ GeneralRegularPolygon);\r\n\ \ \ \ \ \ \ \ assertEquals("Nadbytecne\ atributy",\ 0,\ SquareObsolete.class.getDeclaredFields().length);\r\n\ \ \ \ \ \ \ \ try\ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ SquareObsolete.class.getDeclaredMethod("toString");\r\n\ \ \ \ \ \ \ \ }\ catch(NoSuchMethodException\ ex)\ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ fail("Chybi\ toString()");\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ assertEquals("Nadbytecne\ metody",\ 1,\ SquareObsolete.class.getDeclaredMethods().length);\r\n\ \ \ \ \ \ \ \ assertEquals("toString()",\ "Square\:\ 1.0x1.0,\ color\=white",\ \ s.toString());\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ pointsPerTest\ +\=\ 1.0;\r\n\ \ \ \ }\r\n
 comment3.params=
-comment3.target=void\ task02()
-comment4.params=
-comment4.target=void\ task03()
-numComments=5
+comment3.target=void\ task03()
+numComments=4
