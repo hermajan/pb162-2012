@@ -28,7 +28,7 @@ public class PaintDemo extends JFrame {
      */
     public static final int VERT_LENGTH = 3;
 
-    private JPanel panel;
+    protected JPanel panel;
     
     private List<Vertex2D> vertices = new ArrayList<Vertex2D>();
     private List<Circle> circles = new ArrayList<Circle>();
@@ -39,14 +39,14 @@ public class PaintDemo extends JFrame {
     private Color triangleColor;
     
     /**
-     * Defaultni konstruktor nastavi defaultni barvy pro telesa. Pozadi bile, body cervene, kruznice modre, trojuhelniky zelene.
+     * Defaultni konstruktor nastavi defaultni barvy pro telesa. Pozadi bile, body cervene, kruznice modre, trojuhelniky zelene
      */
     public PaintDemo() {
         this(Color.WHITE, Color.RED, Color.BLUE, Color.GREEN);
     }
     
     /**
-     * Konstruktor umoznuje nastavit barvu pozadi. Body cervene, kruznice modre, trojuhelniky zelene.
+     * Konstruktor umoznuje nastavit barvu pozadi. Body cervene, kruznice modre, trojuhelniky zelene
      * 
      * @param backgroundColor Barva pro pozadi
      */
@@ -80,11 +80,12 @@ public class PaintDemo extends JFrame {
         this.circleColor = circleColor;
         this.triangleColor = triangleColor;
     }
-
+    
     private void initialize() {
         panel = new JPanel();
         setBounds(100, 100, 800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setTitle("Vizualizace obrazců. Autor Pavel Beran (255625).");
         add(panel);
         setVisible(true);
     }
@@ -178,7 +179,7 @@ public class PaintDemo extends JFrame {
         return true;
     }
     
-    private void paintVertex(Graphics g, Vertex2D v) {
+    protected void paintVertex(Graphics g, Vertex2D v) {
         int width = panel.getWidth();
         int height = panel.getHeight();
         int halfX = width/2;
@@ -191,7 +192,7 @@ public class PaintDemo extends JFrame {
         g.drawLine(x-VERT_LENGTH, y-VERT_LENGTH, x+VERT_LENGTH, y+VERT_LENGTH);
     }
     
-    private void paintCircle(Graphics g, Circle c) {
+    protected void paintCircle(Graphics g, Circle c) {
         int width = panel.getWidth();
         int height = panel.getHeight();
         int halfX = width/2;
@@ -207,7 +208,7 @@ public class PaintDemo extends JFrame {
 
     }
     
-    private void paintTriangle(Graphics g, Triangle tri) {
+    protected void paintTriangle(Graphics g, Triangle tri) {
         int width = panel.getWidth();
         int height = panel.getHeight();
         int halfX = width/2;
@@ -228,7 +229,7 @@ public class PaintDemo extends JFrame {
         g.drawPolygon(triangle);
     }
     
-    private void paintCross(Graphics g) {
+    protected void paintCross(Graphics g) {
         int width = panel.getWidth();
         int height = panel.getHeight();
         int halfX = width/2;
@@ -239,7 +240,7 @@ public class PaintDemo extends JFrame {
         g.drawLine(halfX, 0, halfX, height);
     }
     
-    private void myPaintAll(Graphics g) {
+    protected void myPaintAll(Graphics g) {
         paintCross(g);
         for (Vertex2D v : vertices) {
             paintVertex(g, v);

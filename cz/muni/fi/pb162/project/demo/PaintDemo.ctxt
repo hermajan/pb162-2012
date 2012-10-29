@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.params=
 comment0.target=PaintDemo()
-comment0.text=\r\n\ Defaultni\ konstruktor\ nastavi\ defaultni\ barvy\ pro\ telesa.\ Pozadi\ bile,\ body\ cervene,\ kruznice\ modre,\ trojuhelniky\ zelene.\r\n
+comment0.text=\r\n\ Defaultni\ konstruktor\ nastavi\ defaultni\ barvy\ pro\ telesa.\ Pozadi\ bile,\ body\ cervene,\ kruznice\ modre,\ trojuhelniky\ zelene\r\n
 comment1.params=backgroundColor
 comment1.target=PaintDemo(java.awt.Color)
-comment1.text=\r\n\ Konstruktor\ umoznuje\ nastavit\ barvu\ pozadi.\ Body\ cervene,\ kruznice\ modre,\ trojuhelniky\ zelene.\r\n\ \r\n\ @param\ backgroundColor\ Barva\ pro\ pozadi\r\n
+comment1.text=\r\n\ Konstruktor\ umoznuje\ nastavit\ barvu\ pozadi.\ Body\ cervene,\ kruznice\ modre,\ trojuhelniky\ zelene\r\n\ \r\n\ @param\ backgroundColor\ Barva\ pro\ pozadi\r\n
 comment10.params=g\ v
 comment10.target=void\ paintVertex(java.awt.Graphics,\ cz.muni.fi.pb162.project.geometry.Vertex2D)
 comment11.params=g\ c

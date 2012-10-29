@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.params=
+comment0.target=PaintDemo2()
+comment0.text=\r\n\ Defaultni\ konstruktor\ nastavi\ defaultni\ barvy\ pro\ telesa.\ Polygony\ tyrkysove.\r\n
+comment1.params=backgroundColor
+comment1.target=PaintDemo2(java.awt.Color)
+comment1.text=\r\n\ Konstruktor\ umoznuje\ nastavit\ barvu\ pozadi.\ Polygony\ jsou\ tyrkysove.\r\n\ \r\n\ @param\ backgroundColor\ Barva\ pro\ pozadi\r\n
+comment2.params=vertexColor\ circleColor\ triangleColor\ polygonColor
+comment2.target=PaintDemo2(java.awt.Color,\ java.awt.Color,\ java.awt.Color,\ java.awt.Color)
+comment2.text=\r\n\ Konstruktor\ umoznuje\ nastavit\ barvu\ teles.\ Pozadi\ bile.\r\n\ \r\n\ @param\ vertexColor\ Barva\ pro\ body\r\n\ @param\ circleColor\ Barva\ pro\ kruznice\r\n\ @param\ triangleColor\ Barva\ pro\ trojuhelniky\r\n\ @param\ polygonColor\ Barva\ pro\ polygony\r\n
+comment3.params=backgroundColor\ vertexColor\ circleColor\ triangleColor\ polygonColor
+comment3.target=PaintDemo2(java.awt.Color,\ java.awt.Color,\ java.awt.Color,\ java.awt.Color,\ java.awt.Color)
+comment3.text=\r\n\ Konstruktor\ umoznuje\ nastavit\ vsechny\ barvy.\r\n\ \r\n\ @param\ backgroundColor\ Barva\ pro\ pozadi\r\n\ @param\ vertexColor\ Barva\ pro\ body\r\n\ @param\ circleColor\ Barva\ pro\ kruznice\r\n\ @param\ triangleColor\ Barva\ pro\ trojuhelniky\r\n\ @param\ polygonColor\ Barva\ pro\ polygony\r\n
+comment4.params=polygon
+comment4.target=boolean\ paintRegularPolygon(cz.muni.fi.pb162.project.geometry.GeneralRegularPolygon)
+comment4.text=\r\n\ Metoda\ pro\ pridani\ polygonu\ do\ seznamu\ pro\ vykresleni.\r\n\ Metoda\ vraci\ logickou\ hodnotu\ v\ zavislosti\ na\ tom\ zda-li\ neni\ polygon\ mimo\ vykreslovaci\ prostor.\r\n\ \r\n\ @param\ polygon\ Polygon\ ktery\ chci\ vykreslit\r\n\ @return\ true\ pokud\ se\ polygon\ vykresli,\ false\ nikoliv\r\n
+comment5.params=g\ polygon
+comment5.target=void\ paintPolygon(java.awt.Graphics,\ cz.muni.fi.pb162.project.geometry.GeneralRegularPolygon)
+comment6.params=g
+comment6.target=void\ myPaintAll(java.awt.Graphics)
+numComments=7
