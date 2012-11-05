@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.params=arr
+comment0.target=ArrayPolygon(Vertex2D[])
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ ArrayPolygon\r\n
+comment1.params=
+comment1.target=int\ getNumVertices()
+comment2.params=index
+comment2.target=Vertex2D\ getVertex(int)
+numComments=3

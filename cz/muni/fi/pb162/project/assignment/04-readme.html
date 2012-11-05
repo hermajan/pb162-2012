@@ -90,9 +90,12 @@
                         Zadáním souřadnic středu a délky hran.
                     </li>
                     <li>
-                        Zadáním souřadnic středu a poloměru opsané kružnice.
+                        Zadáním poloměru opsané kružnice a souřadnic středu.
                     </li>
                 </ul>
+		Pozn.: Aby šlo konstruktory ve třídě <code>Square</code> přetížit, musí mít druhý konstruktor
+                parametry v opačném pořadí, tj. jako první ploměr a jako druhý střed. Jinak by totiž byla 
+                signatura obou konstruktorů stejná.
             </li>
             <li>
                 Vytvořte třídu <code>RegularTriangle</code> rozšiřující třídu <code>Triangle</code>

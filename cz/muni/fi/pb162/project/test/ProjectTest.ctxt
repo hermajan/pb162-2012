@@ -5,7 +5,6 @@ comment1.params=
 comment1.target=void\ task01()
 comment2.params=
 comment2.target=void\ task02()
-comment2.text=\r\n\ \ \ \ @Test\ public\ void\ task02()\ {\r\n\ \ \ \ \ \ \ \ task\ \=\ 2;\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ BasicRulesTester.testMethodsAndAttributes(SquareObsolete.class);\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ SquareObsolete\ s\ \=\ new\ SquareObsolete();\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ assertTrue("Rozsireni\ nadtridy",\ s\ instanceof\ GeneralRegularPolygon);\r\n\ \ \ \ \ \ \ \ assertEquals("Nadbytecne\ atributy",\ 0,\ SquareObsolete.class.getDeclaredFields().length);\r\n\ \ \ \ \ \ \ \ try\ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ SquareObsolete.class.getDeclaredMethod("toString");\r\n\ \ \ \ \ \ \ \ }\ catch(NoSuchMethodException\ ex)\ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ fail("Chybi\ toString()");\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ assertEquals("Nadbytecne\ metody",\ 1,\ SquareObsolete.class.getDeclaredMethods().length);\r\n\ \ \ \ \ \ \ \ assertEquals("toString()",\ "Square\:\ 1.0x1.0,\ color\=white",\ \ s.toString());\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ pointsPerTest\ +\=\ 1.0;\r\n\ \ \ \ }\r\n
 comment3.params=
 comment3.target=void\ task03()
 numComments=4
