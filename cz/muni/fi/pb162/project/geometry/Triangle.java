@@ -4,27 +4,30 @@ package cz.muni.fi.pb162.project.geometry;
  * Defines triangle
  * 
  * @author Jan Hermann 
- * @version 15.10.2012
+ * @version 08.11.2012
  */
-public class Triangle implements Solid {
-    private Vertex2D a;
+public class Triangle extends ArrayPolygon implements Solid {
+    /*private Vertex2D a;
     private Vertex2D b;
-    private Vertex2D c;
+    private Vertex2D c;*/
+    private Vertex2D[] v;
     public static final double EQUILATERAL=0.001;
     
     public Triangle(Vertex2D a,Vertex2D b,Vertex2D c) {
-        this.a=a;
+        super(new Vertex2D[]{a,b,c});
+        v=new Vertex2D[]{a,b,c};
+        /*this.a=a;
         this.b=b;
-        this.c=c;
+        this.c=c;*/
     }
-    /**
+    /*
      * Returns vertex A
      * 
      * @return Vertex A
      */
-    public Vertex2D getVertexA() {
+    /*public Vertex2D getVertexA() {
         return a;
-    }
+    }*/
     /*
      * Sets point A
      * 
@@ -34,14 +37,14 @@ public class Triangle implements Solid {
         a=vert;
     }*/
 
-    /**
+    /*
      * Returns vertex B
      * 
      * @return Vertex B
      */
-    public Vertex2D getVertexB() {
+    /*public Vertex2D getVertexB() {
         return b;
-    }
+    }*/
     /*
      * Sets point B
      * 
@@ -51,14 +54,14 @@ public class Triangle implements Solid {
         b=vert;
     }*/
     
-    /**
+    /*
      * Returns vertex C
      * 
      * @return Vertex C
      */
-    public Vertex2D getVertexC() {
+    /*public Vertex2D getVertexC() {
         return c;
-    }
+    }*/
     /*
      * Sets point C
      * 
@@ -74,24 +77,24 @@ public class Triangle implements Solid {
      * @return true if triangle is equilateral, false otherwise
      */
     public boolean isEquilateral() {
-        return((Math.abs(a.distance(b)-a.distance(c)) < EQUILATERAL) && (Math.abs(a.distance(b)-b.distance(c)) < EQUILATERAL));
+        return((Math.abs(v[0].distance(v[1])-v[0].distance(v[2])) < EQUILATERAL) && (Math.abs(v[0].distance(v[1])-v[1].distance(v[2])) < EQUILATERAL));
     }
     
-    /**
+    /*
      * Returns string in format "Triangle: vertices=[ax, ay] [bx, by] [cx, cy]"
      * 
      * @return string in format "Triangle: vertices=[ax, ay] [bx, by] [cx, cy]"
      */
-    public String toString() {
+    /*public String toString() {
         if(a==null || b==null || c==null) {
             return "INVALID TRIANGLE";
         }
         else {
             return "Triangle: vertices="+a.toString()+" "+b.toString()+" "+c.toString();
         }
-    }
+    }*/
     
-    public double getWidth() {
+    /*public double getWidth() {
         double minimum;
         double maximum;
         
@@ -127,6 +130,6 @@ public class Triangle implements Solid {
         
         s=getLength()/2;
         return Math.sqrt(s * (s-sideA) * (s-sideB) * (s-sideC));
-    }
+    }*/
 }
 

@@ -16,8 +16,8 @@ import cz.muni.fi.pb162.project.geometry.Circle;
  * 
  * Trida umoznujici vykresleni doposud dokoncenych grafickych objektu (bod, kruznici, trojuhelnik).
  * 
- * @author Bc. Pavel Beran (255625)
- * @version 2012-10-19
+ * @author Bc. Pavel Beran (255625) and Jan Hermann
+ * @version 08.11.2012
  *
  */
 
@@ -163,9 +163,9 @@ public class PaintDemo extends JFrame {
         int halfX = width/2;
         int halfY = height/2;
         
-        Vertex2D a = triangle.getVertexA();
-        Vertex2D b = triangle.getVertexB();
-        Vertex2D c = triangle.getVertexC();
+        Vertex2D a = triangle.getVertex(0);
+        Vertex2D b = triangle.getVertex(1);
+        Vertex2D c = triangle.getVertex(2);
         
         int minX = width - ((int) Math.rint(halfX - Math.min(a.getX(), Math.min(b.getX(), c.getX()))));
         int maxX = width - ((int) Math.rint(halfX - Math.max(a.getX(), Math.max(b.getX(), c.getX()))));
@@ -214,12 +214,12 @@ public class PaintDemo extends JFrame {
         int halfX = width/2;
         int halfY = height/2;
         
-        int a1 = width - ((int) Math.rint(halfX - tri.getVertexA().getX()));
-        int a2 = (int) Math.rint(halfY - tri.getVertexA().getY());
-        int b1 = width - ((int) Math.rint(halfX - tri.getVertexB().getX()));
-        int b2 = (int) Math.rint(halfY - tri.getVertexB().getY());
-        int c1 = width - ((int) Math.rint(halfX - tri.getVertexC().getX()));
-        int c2 = (int) Math.rint(halfY - tri.getVertexC().getY());
+        int a1 = width - ((int) Math.rint(halfX - tri.getVertex(0).getX()));
+        int a2 = (int) Math.rint(halfY - tri.getVertex(0).getY());
+        int b1 = width - ((int) Math.rint(halfX - tri.getVertex(1).getX()));
+        int b2 = (int) Math.rint(halfY - tri.getVertex(1).getY());
+        int c1 = width - ((int) Math.rint(halfX - tri.getVertex(2).getX()));
+        int c2 = (int) Math.rint(halfY - tri.getVertex(2).getY());
 
         g.setColor(triangleColor);
         Polygon triangle = new Polygon();

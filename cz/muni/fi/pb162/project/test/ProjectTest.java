@@ -121,7 +121,7 @@ public class ProjectTest extends AbstractTest {
     @Test public void task03() {
         task = 3;
 
-        /*
+        
         BasicRulesTester.testMethodsAndAttributes(Triangle.class);
         BasicRulesTester.testAncestor(ArrayPolygon.class, Triangle.class);
         
@@ -143,7 +143,7 @@ public class ProjectTest extends AbstractTest {
         assertTrue("getArea() dava spatny vysledek", Math.abs(tri.getArea() - 1.0) < 0.001);
         
         pointsPerTest += 0.0;
-        */
+        
     }
 
     private class MockPolygon extends SimplePolygon {
