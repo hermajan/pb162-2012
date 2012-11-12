@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=DbUnreachableException()
+comment1.params=msg
+comment1.target=DbUnreachableException(java.lang.String)
+comment2.params=cause
+comment2.target=DbUnreachableException(java.lang.Throwable)
+comment3.params=message\ cause
+comment3.target=DbUnreachableException(java.lang.String,\ java.lang.Throwable)
+numComments=4

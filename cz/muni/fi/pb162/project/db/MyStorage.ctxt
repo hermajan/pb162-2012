@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.params=connector\ maxAttempts
+comment0.target=MyStorage(Connector,\ int)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ MyStorage\r\n
+comment1.params=host\ data
+comment1.target=void\ store(java.lang.String,\ java.lang.Object)
+numComments=2
