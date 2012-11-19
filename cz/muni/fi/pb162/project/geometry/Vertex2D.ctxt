@@ -1,6 +1,7 @@
 #BlueJ class context
 comment0.params=x\ y
 comment0.target=Vertex2D(double,\ double)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Vertex2D\r\n\ \r\n\ @param\ x\ X\ coordinate\r\n\ @param\ y\ Y\ coordinate\r\n
 comment1.params=
 comment1.target=double\ getX()
 comment1.text=\r\n\ Returns\ coordinate\ X\r\n\ \r\n\ @return\ Coordinate\ x\r\n
@@ -13,4 +14,8 @@ comment3.text=\r\n\ Return\ coordinates\ in\ format\ [X,\ Y]\r\n\ \r\n\ @return\
 comment4.params=point
 comment4.target=double\ distance(Vertex2D)
 comment4.text=\r\n\ Return\ distance\ between\ points\r\n\r\n\ @param\ point\ Some\ other\ point\r\n\ @return\ Distance\ between\ points\r\n
-numComments=5
+comment5.params=obj
+comment5.target=boolean\ equals(java.lang.Object)
+comment6.params=
+comment6.target=int\ hashCode()
+numComments=7

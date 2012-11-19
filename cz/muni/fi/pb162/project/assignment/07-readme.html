@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        
+        <h3>Povinné úkoly:</h3>
+        <ol>
+            <li>
+                [1 bod] Definujte rovnost dvou vrcholů (třída <code>Vertex2D</code>) tak, 
+                že dva vrcholy jsou stejné, pokud mají stejné souřadnice. Nezapomeňte, 
+                že předefinováním rovnosti máte za povinnost předefinovat ještě jednu 
+                vlastnost/metodu.
+            </li>
+            
+            <li>
+                [2 body] Vytvořte třídu <code>CollectionPolygon</code> rozšiřující třídu 
+                <code>SimplePolygon</code>. Tato třída bude velmi podobná třídě 
+                <code>ArrayPolygon</code> z páté iterace. Lišit se bude pouze tím, že vrcholy n-úhelníka
+                nebudou uloženy v poli, ale ve vhodné kolekci. Při výběru mezi seznamem a
+                množinou myslete na to, že topologie n-úhelníka je dána pořadím vrcholů a že je povoleno
+                mít více vrcholů se stejnými souřadnicemi (u jednoduchého n-úhelníka
+                se sice nesmí křížit hrany, mohou se ale dotýkat).
+                <ul>
+                    <li>
+                        Třída bude mít stejný konstruktor jako <code>ArrayPolygon</code>, 
+                        tj. bude brát <b>pole</b> vrcholů jako svůj vstupní argument a vrcholy ze vtupního pole 
+                        si uloží do kolekce. Konstruktor navíc otestuje to, že samotné pole ani žádný jeho 
+                        prvek není null. Pokud je null, konstruktor selže a vyhodí vhodnou výjimku.
+                    </li>
+                    <li>
+                        Do třídy navíc přidejte metodu
+                        <code>Collection&lt;Vertex2D&gt; getVertices()</code>, která vrátí 
+                        všechny vrcholy n-úhelníka.
+                    </li>
+                    <li>
+                        Do třídy dále přidejte metodu <code>CollectionPolygon invert()</code>, 
+                        která vytvoří a vrátí n-úhelník s obráceným pořadím vrcholů.
+                    </li>
+                </ul>
+                <b>Pozn. pro cvičící:</b> Vysvětlete studentům použití třídy <code>Collections</code>
+                pro vracení nemodifikovatelných kolekcí. Nestihlo se to probrat 
+                (je probíráno teprve tento týden).
+            </li>
+
+            <li>
+                [1 bod] Upravte rozhraní <code>Colored</code> tak, aby barva nebyla uchovávána ve formě 
+                textového řetězce, ale pomocí výčtového typu <code>Color</code>. Ve výčtovém typu 
+                definujte několik běžných barev. Upravte exitující třídy tak, aby šel projekt po 
+                úpravě rozhraní přeložit.
+            </li>
+            
+        </ol>
+        
+        <h3>Nepovinné úkoly:</h3>
+        <ol>
+            <li>
+                Do třídy <code>CollectionPolygon</code> přidejte metodu <code>boolean compare(CollectionPolygon pol)</code>, která
+                vrátí <code>true</code> pokud jsou oba n-úhelníky stejné, tj. mají stejné součadnice vrcholů se stejnou
+                sousedností (propojením hranami). 
+                N-úhelníky tedy mohou mít i posunuté souřadnice a/nebo obrácené pořadí vrcholů.
+                <br/>
+                <b>Př.:</b> Následující trojúhelníky jsou stejné: 
+                <ul>
+                    <li>([-1,-1] [ 1,-1] [ 0, 1]) </li>
+                    <li>([ 1,-1] [ 0, 1] [-1,-1]) /posunutí vrcholů oproti prvnímu/</li>
+                    <li>([ 0, 1] [ 1,-1] [-1,-1]) /opačné pořadí vrcholů oproti prvnímu/</li>
+                    <li>([ 1,-1] [-1,-1] [ 0, 1]) /kombinace obojího/</li>
+                </ul>
+                Pro implementaci využijte předchozí metodu.
+            </li>
+            <!-- <li>
+                TO DO: oříznutí svislou přímkou, rovnost polygonů, bridge/decorator/adapter na
+                propojení pravidelných a jednoduchých n-úhelníků apod.
+            </li> -->
+        </ol>
+
+    </body>
+</html>

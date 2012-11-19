@@ -11,7 +11,7 @@ public class GeneralRegularPolygon implements RegularPolygon, Colored {
     private Vertex2D center;
     private int edges;
     private double length;
-    private String color;
+    private Color color;
 
     /**
      * Constructor for objects of class GeneralRegularPolygon
@@ -20,7 +20,7 @@ public class GeneralRegularPolygon implements RegularPolygon, Colored {
         this.center=center;
         this.edges=edges;
         this.length=length;
-        this.color="white";
+        this.color=Color.WHITE;
     }
 
     public int getNumEdges() {
@@ -43,11 +43,11 @@ public class GeneralRegularPolygon implements RegularPolygon, Colored {
         return (1.0/2.0)*edges*Math.pow(getRadius(),2)*Math.sin((2*Math.PI)/edges);
     }
     
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
     
-    public void setColor(String color) {
+    public void setColor(Color color) {
         this.color=color;
     }
     

@@ -1,15 +1,21 @@
 package cz.muni.fi.pb162.project.geometry;
 
 /**
- * Defines triangle
+ * Defines 2D vertex 
  * 
  * @author Jan Hermann 
- * @version 08.10.2012
+ * @version 19.11.2012
  */
 public class Vertex2D {
     private double x;
     private double y;
 
+    /**
+     * Constructor for objects of class Vertex2D
+     * 
+     * @param x X coordinate
+     * @param y Y coordinate
+     */
     public Vertex2D(double x, double y) {
         this.x=x;
         this.y=y;
@@ -72,5 +78,29 @@ public class Vertex2D {
 
         double d=Math.pow(otherX-x,2)+Math.pow(otherY-y,2);
         return Math.sqrt(d);
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if(obj==null) {
+            return false;
+        }
+        //if(obj instanceof Vertex2D) {
+        if(getClass()==obj.getClass()) {
+            final Vertex2D v=(Vertex2D)obj;
+            if(this.x!=v.getX()) {
+                return false;
+            }
+            if(this.y!=v.getY()) {
+                return false;
+            }
+            return true;
+        } else {
+            return false;
+        }   
+    }
+    @Override
+    public int hashCode() {
+        return new Double(x).hashCode()+new Double(y).hashCode();
     }
 }

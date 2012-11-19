@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.params=arr
+comment0.target=CollectionPolygon(Vertex2D[])
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ CollectionPolygon.\r\n\ \r\n\ @param\ arr\ Vertex2D\ array\ for\ copy\r\n\ @throws\ IllegalArgumentException\ if\ arr\ is\ null\ or\ contains\ null\r\n
+comment1.params=
+comment1.target=int\ getNumVertices()
+comment2.params=index
+comment2.target=Vertex2D\ getVertex(int)
+comment3.params=
+comment3.target=java.util.Collection\ getVertices()
+comment3.text=\r\n\ Get\ all\ vertices.\r\n\ \r\n\ @return\ Collection\ of\ vertices\r\n
+comment4.params=
+comment4.target=CollectionPolygon\ invert()
+comment4.text=\r\n\ Inverts\ vertices.\r\n\ \r\n\ @return\ Collection\ of\ inverted\ vertices\r\n
+numComments=5
