@@ -20,6 +20,4 @@ comment6.params=
 comment6.target=int\ hashCode()
 comment7.params=v
 comment7.target=int\ compareTo(Vertex2D)
-comment8.params=o
-comment8.target=int\ compareTo(java.lang.Object)
-numComments=9
+numComments=8

@@ -6,7 +6,7 @@ package cz.muni.fi.pb162.project.geometry;
  * @author Jan Hermann 
  * @version 03.12.2012
  */
-public class Vertex2D implements Comparable {
+public class Vertex2D implements Comparable<Vertex2D> {
     private double x;
     private double y;
 
@@ -116,7 +116,7 @@ public class Vertex2D implements Comparable {
         if(this.x>v.getX()) { return 1; }
         else { return -1; }
     }
-    public int compareTo(Object o) {
+    /*public int compareTo(Object o) {
         Vertex2D v=(Vertex2D)o;
         if(v==null) { return -1; }
         if(this.equals(v)) { return 0; }
@@ -128,5 +128,5 @@ public class Vertex2D implements Comparable {
        
         if(this.x>v.getX()) { return 1; }
         else { return -1; }
-    }
+    }*/
 }

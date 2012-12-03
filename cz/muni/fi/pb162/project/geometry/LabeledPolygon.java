@@ -88,12 +88,12 @@ public class LabeledPolygon extends SimplePolygon {
        return Collections.unmodifiableCollection(sorted);
    }
    
-   public Collection<Vertex2D> getSortedVertices(Comparator c) {
+   public Collection<Vertex2D> getSortedVertices(Comparator<Vertex2D> c) {
        List<Vertex2D> sorted=new ArrayList<Vertex2D>();
        for(int i=0; i<map.size(); i++) {
            if(!sorted.contains(getVertex(i))) { 
                sorted.add(getVertex(i)); 
-            }
+           }
        }
        
        Collections.sort(sorted,c);

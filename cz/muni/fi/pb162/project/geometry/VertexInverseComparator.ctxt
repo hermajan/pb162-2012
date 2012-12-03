@@ -1,6 +1,5 @@
 #BlueJ class context
 comment0.params=o1\ o2
 comment0.target=int\ compare(Vertex2D,\ Vertex2D)
-comment1.params=o1\ o2
-comment1.target=int\ compare(java.lang.Object,\ java.lang.Object)
-numComments=2
+comment0.text=public\ int\ compare(Vertex2D\ o1,Vertex2D\ o2)\ {\r\n\ \ \ \ \ \ \ \ return\ compare(o1,o2);\r\n\ \ \ \ }\r\n\ \ \ \ public\ int\ compare(Object\ o1,\ Object\ o2)\ {\r\n\ \ \ \ \ \ \ \ Vertex2D\ v1\=(Vertex2D)o1;\r\n\ \ \ \ \ \ \ \ Vertex2D\ v2\=(Vertex2D)o2;\r\n\ \ \ \ \ \ \ \ return\ (v1.compareTo(v2)*(-1));\r\n}
+numComments=1
