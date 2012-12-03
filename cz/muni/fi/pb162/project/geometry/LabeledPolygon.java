@@ -1,11 +1,13 @@
 package cz.muni.fi.pb162.project.geometry;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Iterator;
 
 /**
  * Labeled polygon
@@ -14,7 +16,7 @@ import java.util.Comparator;
  * @version 03.12.2012
  */
 public class LabeledPolygon extends SimplePolygon {
-    private TreeMap<String,Vertex2D> map;
+    private SortedMap<String,Vertex2D> map;
 
     /**
      * Constructor for objects of class LabeledPolygon.
@@ -54,23 +56,24 @@ public class LabeledPolygon extends SimplePolygon {
         if(index<0) {
             throw new IllegalArgumentException("Index is below zero!");
         }
-        String key=map.firstKey();
-        for(int i=0;i<(index%getNumVertices());i++) {
-            key=map.higherKey(key);
+        
+        List<Vertex2D> vertices=new ArrayList<Vertex2D>();
+        Iterator<Map.Entry<String,Vertex2D>> entries=map.entrySet().iterator();
+        while(entries.hasNext()) {
+            Map.Entry<String,Vertex2D> entry=entries.next();
+            vertices.add(entry.getValue());
         }
-        return getVertex(key);
+        return vertices.get(index%getNumVertices());
     }
     
     public Collection<String> getLabels(Vertex2D vert) {
         Collection<String> labels=new ArrayList<String>();
-        for(int i=0;i<getNumVertices();i++) {
-            Vertex2D v=getVertex(i);
+        Iterator<Map.Entry<String,Vertex2D>> entries = map.entrySet().iterator();
+        while (entries.hasNext()) {
+            Map.Entry<String,Vertex2D> entry = entries.next();
+            Vertex2D v=getVertex(entry.getKey());
             if(v.equals(vert)) {
-                String key=map.firstKey();
-                for(int j=0; j<i; j++) {
-                    key=map.higherKey(key);    
-                }
-                labels.add(key);
+                labels.add(entry.getKey());
             }
         }
         return Collections.unmodifiableCollection(labels);
@@ -78,7 +81,7 @@ public class LabeledPolygon extends SimplePolygon {
     
    public Collection<Vertex2D> getSortedVertices() {
        List<Vertex2D> sorted=new ArrayList<Vertex2D>();
-       for(int i=0;i<map.size();i++) {
+       for(int i=0; i<map.size(); i++) {
            if(!sorted.contains(getVertex(i))) {
                sorted.add(getVertex(i));  
            }
@@ -95,7 +98,7 @@ public class LabeledPolygon extends SimplePolygon {
                sorted.add(getVertex(i)); 
            }
        }
-       
+   
        Collections.sort(sorted,c);
        return Collections.unmodifiableCollection(sorted);
    }

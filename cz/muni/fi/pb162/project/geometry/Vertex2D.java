@@ -116,17 +116,4 @@ public class Vertex2D implements Comparable<Vertex2D> {
         if(this.x>v.getX()) { return 1; }
         else { return -1; }
     }
-    /*public int compareTo(Object o) {
-        Vertex2D v=(Vertex2D)o;
-        if(v==null) { return -1; }
-        if(this.equals(v)) { return 0; }
-       
-        if(this.x==v.getX()) {
-            if(this.y>v.getY()) { return 1; }
-            else { return -1; }
-        }
-       
-        if(this.x>v.getX()) { return 1; }
-        else { return -1; }
-    }*/
 }
