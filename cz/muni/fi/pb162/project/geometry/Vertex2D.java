@@ -4,9 +4,9 @@ package cz.muni.fi.pb162.project.geometry;
  * Defines 2D vertex 
  * 
  * @author Jan Hermann 
- * @version 19.11.2012
+ * @version 03.12.2012
  */
-public class Vertex2D {
+public class Vertex2D implements Comparable {
     private double x;
     private double y;
 
@@ -102,5 +102,22 @@ public class Vertex2D {
     @Override
     public int hashCode() {
         return new Double(x).hashCode()+new Double(y).hashCode();
+    }
+    
+   public int compareTo(Vertex2D o) {
+        if(o==null) return -1;
+        if(this.equals(o)) return 0;
+       
+        if(this.x==o.getX()) {
+            if(this.y>o.getY()) return 1;
+            else return -1;
+        }
+       
+        if(this.x>o.getX()) return 1;
+        else return -1;
+    }
+   
+    public int compareTo(Object o) {
+        return (-1);
     }
 }

@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.params=
+comment0.target=LabeledPolygon()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ CollectionPolygon.\r\n\ \r\n\ @param\ arr\ Vertex2D\ array\ for\ copy\r\n
+comment1.params=
+comment1.target=int\ getNumVertices()
+comment2.params=label\ vert
+comment2.target=void\ addVertex(java.lang.String,\ Vertex2D)
+comment3.params=label
+comment3.target=Vertex2D\ getVertex(java.lang.String)
+comment4.params=index
+comment4.target=Vertex2D\ getVertex(int)
+comment5.params=vert
+comment5.target=java.util.Collection\ getLabels(Vertex2D)
+comment6.params=
+comment6.target=java.util.Collection\ getSortedVertices()
+comment7.params=c
+comment7.target=java.util.Collection\ getSortedVertices(java.util.Comparator)
+numComments=8
