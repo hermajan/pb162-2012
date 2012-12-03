@@ -1,11 +1,12 @@
 #BlueJ class context
 comment0.params=
 comment0.target=LabeledPolygon()
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ CollectionPolygon.\r\n\ \r\n\ @param\ arr\ Vertex2D\ array\ for\ copy\r\n
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ LabeledPolygon.\r\n
 comment1.params=
 comment1.target=int\ getNumVertices()
 comment2.params=label\ vert
 comment2.target=void\ addVertex(java.lang.String,\ Vertex2D)
+comment2.text=\r\n\ Adds\ vertex\ to\ sorted\ map\r\n\ \r\n\ @param\ label\ Label\ of\ vertex\r\n\ @param\ vert\ Vertex\r\n
 comment3.params=label
 comment3.target=Vertex2D\ getVertex(java.lang.String)
 comment4.params=index

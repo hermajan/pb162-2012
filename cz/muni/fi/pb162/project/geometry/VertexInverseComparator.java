@@ -2,10 +2,10 @@ package cz.muni.fi.pb162.project.geometry;
 import java.util.Comparator;
  
 /**
- * Write a description of class VertexInverseComparator here.
+ * Vertex inverse comparator
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Jan Hermann 
+ * @version 03.12.2012
  */
 public class VertexInverseComparator implements Comparator {
     public int compare(Vertex2D o1,Vertex2D o2) {

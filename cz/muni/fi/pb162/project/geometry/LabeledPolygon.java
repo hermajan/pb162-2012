@@ -8,18 +8,16 @@ import java.util.ArrayList;
 import java.util.Comparator;
 
 /**
- * Collection of polygon
+ * Labeled polygon
  * 
- * @author Jan Hermann
- * @version 19.11.2012
+ * @author Jan Hermann 
+ * @version 03.12.2012
  */
 public class LabeledPolygon extends SimplePolygon {
     private TreeMap<String,Vertex2D> map;
 
     /**
-     * Constructor for objects of class CollectionPolygon.
-     * 
-     * @param arr Vertex2D array for copy
+     * Constructor for objects of class LabeledPolygon.
      */
     public LabeledPolygon() {
         map=new TreeMap<String, Vertex2D>();
@@ -29,6 +27,12 @@ public class LabeledPolygon extends SimplePolygon {
        return map.size();
     }
     
+    /**
+     * Adds vertex to sorted map
+     * 
+     * @param label Label of vertex
+     * @param vert Vertex
+     */
     public void addVertex(String label, Vertex2D vert) throws IllegalArgumentException {
         if(label==null) {
             throw new IllegalArgumentException("Label is null!");
@@ -50,26 +54,26 @@ public class LabeledPolygon extends SimplePolygon {
         if(index<0) {
             throw new IllegalArgumentException("Index is below zero!");
         }
-       String key=map.firstKey();
-       for(int i=0;i<(index%getNumVertices());i++) {
-           key=map.higherKey(key);
-       }
-       return getVertex(key);
+        String key=map.firstKey();
+        for(int i=0;i<(index%getNumVertices());i++) {
+            key=map.higherKey(key);
+        }
+        return getVertex(key);
     }
     
     public Collection<String> getLabels(Vertex2D vert) {
-       Collection<String> ret = new ArrayList<String>();
-       for(int i=0;i<getNumVertices();i++) {
-           Vertex2D tmp = getVertex(i);
-           if(tmp.equals(vert)) {
-               String key = map.firstKey();
-               for(int j=0; j<i; j++) {
-                   key = map.higherKey(key);    
-               }
-               ret.add(key);
-           }
-       }
-       return Collections.unmodifiableCollection(ret);
+        Collection<String> ret = new ArrayList<String>();
+        for(int i=0;i<getNumVertices();i++) {
+            Vertex2D tmp = getVertex(i);
+            if(tmp.equals(vert)) {
+                String key = map.firstKey();
+                for(int j=0; j<i; j++) {
+                    key = map.higherKey(key);    
+                }
+                ret.add(key);
+            }
+        }
+        return Collections.unmodifiableCollection(ret);
    }
     
    public Collection<Vertex2D> getSortedVertices() {
@@ -80,39 +84,17 @@ public class LabeledPolygon extends SimplePolygon {
            }
        }
        
-       int size=sorted.size();
-       Collection<Vertex2D> ret=new ArrayList<Vertex2D>();
-       for(int i=0; i<size; i++) {
-           Vertex2D min=sorted.get(0);
-           for(int j=0; j<sorted.size(); j++) {
-               if(min.compareTo(sorted.get(j))>0) min=sorted.get(j);    
-           }
-           ret.add(min);
-           sorted.remove(min);
-       }
-       
-       return Collections.unmodifiableCollection(ret);
-       
+       Collections.sort(sorted);
+       return Collections.unmodifiableCollection(sorted);
    }
    
    public Collection<Vertex2D> getSortedVertices(Comparator c) {
-       List<Vertex2D> sorted= new ArrayList<Vertex2D>();
+       List<Vertex2D> sorted=new ArrayList<Vertex2D>();
        for(int i=0; i<map.size(); i++) {
            if(!sorted.contains(getVertex(i))) sorted.add(getVertex(i));  
        }
        
-       int size=sorted.size();
-       Collection<Vertex2D> ret=new ArrayList<Vertex2D>();
-       
-       for(int i=0; i<size; i++) {
-           Vertex2D min=sorted.get(0);
-           for(int j=0; j<sorted.size(); j++) {
-               if(c.compare(min,sorted.get(j))>0) min=sorted.get(j);    
-           }
-           ret.add(min);
-           sorted.remove(min);
-       }
-       
-       return Collections.unmodifiableCollection(ret);
+       Collections.sort(sorted,c);
+       return Collections.unmodifiableCollection(sorted);
    }
 }

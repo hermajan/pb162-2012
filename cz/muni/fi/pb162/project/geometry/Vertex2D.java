@@ -104,20 +104,29 @@ public class Vertex2D implements Comparable {
         return new Double(x).hashCode()+new Double(y).hashCode();
     }
     
-   public int compareTo(Vertex2D o) {
-        if(o==null) return -1;
-        if(this.equals(o)) return 0;
+    public int compareTo(Vertex2D v) {
+        if(v==null) { return -1; }
+        if(this.equals(v)) { return 0; }
        
-        if(this.x==o.getX()) {
-            if(this.y>o.getY()) return 1;
-            else return -1;
+        if(this.x==v.getX()) {
+            if(this.y>v.getY()) { return 1; }
+            else { return -1; }
         }
        
-        if(this.x>o.getX()) return 1;
-        else return -1;
+        if(this.x>v.getX()) { return 1; }
+        else { return -1; }
     }
-   
     public int compareTo(Object o) {
-        return (-1);
+        Vertex2D v=(Vertex2D)o;
+        if(v==null) { return -1; }
+        if(this.equals(v)) { return 0; }
+       
+        if(this.x==v.getX()) {
+            if(this.y>v.getY()) { return 1; }
+            else { return -1; }
+        }
+       
+        if(this.x>v.getX()) { return 1; }
+        else { return -1; }
     }
 }
