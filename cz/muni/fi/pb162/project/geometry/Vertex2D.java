@@ -112,7 +112,7 @@ public class Vertex2D implements Comparable {
             if(this.y>v.getY()) { return 1; }
             else { return -1; }
         }
-       
+        
         if(this.x>v.getX()) { return 1; }
         else { return -1; }
     }

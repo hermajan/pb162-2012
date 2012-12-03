@@ -62,18 +62,18 @@ public class LabeledPolygon extends SimplePolygon {
     }
     
     public Collection<String> getLabels(Vertex2D vert) {
-        Collection<String> ret = new ArrayList<String>();
+        Collection<String> labels=new ArrayList<String>();
         for(int i=0;i<getNumVertices();i++) {
-            Vertex2D tmp = getVertex(i);
-            if(tmp.equals(vert)) {
-                String key = map.firstKey();
+            Vertex2D v=getVertex(i);
+            if(v.equals(vert)) {
+                String key=map.firstKey();
                 for(int j=0; j<i; j++) {
-                    key = map.higherKey(key);    
+                    key=map.higherKey(key);    
                 }
-                ret.add(key);
+                labels.add(key);
             }
         }
-        return Collections.unmodifiableCollection(ret);
+        return Collections.unmodifiableCollection(labels);
    }
     
    public Collection<Vertex2D> getSortedVertices() {
@@ -91,7 +91,9 @@ public class LabeledPolygon extends SimplePolygon {
    public Collection<Vertex2D> getSortedVertices(Comparator c) {
        List<Vertex2D> sorted=new ArrayList<Vertex2D>();
        for(int i=0; i<map.size(); i++) {
-           if(!sorted.contains(getVertex(i))) sorted.add(getVertex(i));  
+           if(!sorted.contains(getVertex(i))) { 
+               sorted.add(getVertex(i)); 
+            }
        }
        
        Collections.sort(sorted,c);
