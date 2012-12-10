@@ -117,13 +117,29 @@ public class LabeledPolygon extends SimplePolygon implements PolygonIO {
    public void read(InputStream is) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
         String line = null;
-
+        int lines=0;
+        List<Vertex2D> vertices=new ArrayList<Vertex2D>();
+        List<String> labels=new ArrayList<String>();
+       
         while ((line = reader.readLine()) != null) {
             //if(line.matches("^\\d+ \\d+ \\w+$")) {
+                lines++;
                 String[] array=line.split(" ",3);
-                Vertex2D v=new Vertex2D(Double.parseDouble(array[0]),Double.parseDouble(array[1]));
-                addVertex(array[2],v);
+                double x=0;
+                double y=0;
+                try {
+                     x=Double.parseDouble(array[0]);
+                     y=Double.parseDouble(array[1]);
+                }
+                catch (NumberFormatException e) {
+                    throw new IOException("Unexpected format of vertices");    
+                }
+                vertices.add(new Vertex2D(x,y));
+                labels.add(array[2]);
             //} 
+        }
+        for(int i=0; i<lines; i++) {
+           addVertex(labels.get(i),vertices.get(i));
         }
     }
     
@@ -134,14 +150,12 @@ public class LabeledPolygon extends SimplePolygon implements PolygonIO {
     
     public void write(OutputStream os) throws IOException {
         BufferedWriter bufwri = new BufferedWriter(new OutputStreamWriter(os));
-        for(int i=0;i<map.size();i++) {
-            Vertex2D v=getVertex(i);
-            Collection<String> labels=new ArrayList<String>();
-            labels=getLabels(v);
-            for(int j=0;j<labels.size();j++) {
-                bufwri.write(v.getX()+" "+v.getY()+" ");//+labels.get(j));
-                bufwri.newLine();
-            }
+        Iterator<Map.Entry<String,Vertex2D>> entries = map.entrySet().iterator();
+        while(entries.hasNext()) {
+            Map.Entry<String,Vertex2D> entry = entries.next();
+            Vertex2D v=getVertex(entry.getKey());
+            bufwri.write(v.getX()+" "+v.getY()+" "+entry.getKey());
+            bufwri.newLine();
         }
         bufwri.flush();
     }
