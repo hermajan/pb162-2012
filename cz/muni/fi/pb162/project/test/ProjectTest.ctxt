@@ -1,10 +1,12 @@
 #BlueJ class context
 comment0.params=
-comment0.target=void\ task01()
+comment0.target=ProjectTest()
 comment1.params=
-comment1.target=void\ task02()
+comment1.target=void\ tearDown()
 comment2.params=
-comment2.target=void\ task03()
+comment2.target=void\ task01()
 comment3.params=
-comment3.target=void\ task04()
-numComments=4
+comment3.target=void\ task02()
+comment4.params=
+comment4.target=void\ task03()
+numComments=5

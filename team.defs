@@ -1,4 +1,4 @@
-#Mon Dec 03 12:09:35 CET 2012
+#Mon Dec 10 14:37:36 CET 2012
 bluej.teamsettings.groupname=
 bluej.teamsettings.subversion.server=svn.code.sf.net
 bluej.teamsettings.user=\  
@@ -8,8 +8,8 @@ bluej.teamsettings.ignore7=.*\\\#backup
 bluej.teamsettings.ignore6=.*\\\#
 bluej.teamsettings.ignore5=.*\\~
 bluej.teamsettings.ignore4=.*\\.ctxt
-bluej.teamsettings.subversion.repositoryPrefix=/p/pb162/code/
 bluej.teamsettings.ignore3=team\\.defs
+bluej.teamsettings.subversion.repositoryPrefix=/p/pb162/code/
 bluej.teamsettings.ignore2=bluej\\.pkh
 bluej.teamsettings.ignore1=.*\\.class
 bluej.teamsettings.subversion.protocol=svn

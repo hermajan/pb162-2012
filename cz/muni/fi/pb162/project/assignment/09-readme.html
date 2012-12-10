@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+         
+        Cílem dnešní iterace je ve třech krocích upravit třídu <code>LabeledPolygon</code> tak, 
+        aby implementovala rozhraní <code>PolygonIO</code>.
+        
+        <h3>Povinné úkoly:</h3>
+        <ol>
+            <li>
+                Metoda <code>read(InputStream)</code> vezme otevřený vstup obsahující pojmenované vrcholy,
+                vrcholy načte a přidá je k existujícím vrcholům polygonu.
+                Při jakékoliv chybě vstupu/výstupu nebo chybě formátu vstupních dat musí metoda 
+                atomicky selhat a vyhodit <code>IOException</code>. Formát vstupních dat je následující:
+                <ul>
+                    <li>Vstup je textový.</li>
+                    <li>Co vrchol, to jeden řádek.</li>
+                    <li>Každý řádek je ve formátu <i>"x y nazev vrcholu"</i>, tj. nejprve
+                        souřadnice vrcholu oddělené mezerou a poté název vrcholu 
+                        (název může obsahovat mezery). Viz např. soubor <i>pol-ok.txt</i> v balíku <i>assignment</i>.</li>
+                </ul>
+            </li>
+
+            <li>
+                Metoda <code>write(OutputStream)</code> zapíše vrcholy do daného
+                výstupního proudu. Výstupní formát je stejný jako v předchozím bodě.
+            </li>
+
+            <li>
+                Metody <code>write(File)</code> a <code>read(File)</code>
+                budou fungovat stejně jako předchozí, budou ale pracovat se souborem namísto 
+                vstupně-výstupního proudu. Vyhněte se zbytečnému opakování kódu!
+            </li>
+        </ol>
+        
+        Testovací třída zapisuje pomocí metody <code>write(File)</code> do souboru <i>pol-out.txt</i>
+        v balíku <i>assignment</i>. Tam si můžete vizuálně ověřit výstup.
+        
+        <h3>Nepovinné úkoly:</h3>
+        <ol>
+            <li>
+                Vytvořte metody binaryWrite(OutputStream os) a binaryRead(InputStream is), které
+                budou fungovat stejně jako předchozí, ale namísto textového vstupu/výstupu 
+                budou data zapisovat/číst binárně.
+            </li>
+        </ol>
+
+    </body>
+</html>

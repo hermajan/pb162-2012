@@ -8,14 +8,24 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.IOException;
+import java.io.File;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 
 /**
  * Labeled polygon
  * 
  * @author Jan Hermann 
- * @version 03.12.2012
+ * @version 10.12.2012
  */
-public class LabeledPolygon extends SimplePolygon {
+public class LabeledPolygon extends SimplePolygon implements PolygonIO {
     private SortedMap<String,Vertex2D> map;
 
     /**
@@ -102,4 +112,42 @@ public class LabeledPolygon extends SimplePolygon {
        Collections.sort(sorted,c);
        return Collections.unmodifiableCollection(sorted);
    }
+   
+   
+   public void read(InputStream is) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+        String line = null;
+
+        while ((line = reader.readLine()) != null) {
+            //if(line.matches("^\\d+ \\d+ \\w+$")) {
+                String[] array=line.split(" ",3);
+                Vertex2D v=new Vertex2D(Double.parseDouble(array[0]),Double.parseDouble(array[1]));
+                addVertex(array[2],v);
+            //} 
+        }
+    }
+    
+    public void read(File file) throws IOException {
+        InputStream is=new FileInputStream(file);
+        read(is);
+    }
+    
+    public void write(OutputStream os) throws IOException {
+        BufferedWriter bufwri = new BufferedWriter(new OutputStreamWriter(os));
+        for(int i=0;i<map.size();i++) {
+            Vertex2D v=getVertex(i);
+            Collection<String> labels=new ArrayList<String>();
+            labels=getLabels(v);
+            for(int j=0;j<labels.size();j++) {
+                bufwri.write(v.getX()+" "+v.getY()+" ");//+labels.get(j));
+                bufwri.newLine();
+            }
+        }
+        bufwri.flush();
+    }
+    
+    public void write(File file) throws IOException {
+        OutputStream os=new FileOutputStream(file);
+        write(os);
+    }
 }
