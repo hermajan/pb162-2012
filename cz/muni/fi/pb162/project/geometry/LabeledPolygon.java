@@ -113,55 +113,81 @@ public class LabeledPolygon extends SimplePolygon implements PolygonIO {
        return Collections.unmodifiableCollection(sorted);
    }
    
-   
+   /**
+    * Reads polygon from stream and adds it to map
+    * 
+    * @param is Input stream
+    * @throw IOException When reading from stream fails
+    */
    public void read(InputStream is) throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-        String line = null;
+        BufferedReader reader=new BufferedReader(new InputStreamReader(is));
+        String line=null;
         int lines=0;
         List<Vertex2D> vertices=new ArrayList<Vertex2D>();
         List<String> labels=new ArrayList<String>();
        
-        while ((line = reader.readLine()) != null) {
-            //if(line.matches("^\\d+ \\d+ \\w+$")) {
-                lines++;
-                String[] array=line.split(" ",3);
-                double x=0;
-                double y=0;
-                try {
-                     x=Double.parseDouble(array[0]);
-                     y=Double.parseDouble(array[1]);
-                }
-                catch (NumberFormatException e) {
-                    throw new IOException("Unexpected format of vertices");    
-                }
-                vertices.add(new Vertex2D(x,y));
-                labels.add(array[2]);
-            //} 
+        while((line=reader.readLine())!=null) {
+            lines++;
+            String[] array=line.split(" ",3);
+            double x=0;
+            double y=0;
+            try {
+                 x=Double.parseDouble(array[0]);
+                 y=Double.parseDouble(array[1]);
+            }
+            catch (NumberFormatException nfe) {
+                throw new IOException("Bad format of vertices!",nfe);
+            }
+            if(array.length<3) {
+                throw new IOException("Bad format of label!");
+            }
+            vertices.add(new Vertex2D(x,y));
+            labels.add(array[2]);
         }
-        for(int i=0; i<lines; i++) {
+        for(int i=0;i<lines;i++) {
            addVertex(labels.get(i),vertices.get(i));
         }
     }
     
+    /**
+    * Reads polygon from stream and adds it to map
+    * 
+    * @param file File to read
+    * @throw IOException When reading from file fails
+    */
     public void read(File file) throws IOException {
         InputStream is=new FileInputStream(file);
         read(is);
+        is.close();
     }
     
+    /**
+    * Writes polygon to stream
+    * 
+    * @param os Output stream
+    * @throw IOException When writing to stream fails
+    */
     public void write(OutputStream os) throws IOException {
-        BufferedWriter bufwri = new BufferedWriter(new OutputStreamWriter(os));
-        Iterator<Map.Entry<String,Vertex2D>> entries = map.entrySet().iterator();
+        BufferedWriter writer=new BufferedWriter(new OutputStreamWriter(os));
+        Iterator<Map.Entry<String,Vertex2D>> entries=map.entrySet().iterator();
         while(entries.hasNext()) {
-            Map.Entry<String,Vertex2D> entry = entries.next();
+            Map.Entry<String,Vertex2D> entry=entries.next();
             Vertex2D v=getVertex(entry.getKey());
-            bufwri.write(v.getX()+" "+v.getY()+" "+entry.getKey());
-            bufwri.newLine();
+            writer.write(v.getX()+" "+v.getY()+" "+entry.getKey());
+            writer.newLine();
         }
-        bufwri.flush();
+        writer.flush();
     }
     
+    /**
+    * Writes polygon to stream
+    * 
+    * @param file File to write
+    * @throw IOException When writing to file fails
+    */
     public void write(File file) throws IOException {
         OutputStream os=new FileOutputStream(file);
         write(os);
+        os.close();
     }
 }
